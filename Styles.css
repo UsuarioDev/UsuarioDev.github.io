@@ -1,0 +1,435 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'sans-serif';
+}
+.header{
+    height: 15vh;
+    background-color:rgb(105, 45, 4);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    .navegacion{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 1.5rem 0;
+
+        .anclaLogo{
+            color: white;
+            text-shadow: -2px -2px 0 #000;
+            font-weight: 700;
+            font-size: 3rem;
+            text-decoration: none;
+        }
+        .listanav{
+            display: flex;
+            list-style: none;
+            align-items: center;
+
+            .navitem{
+                margin-right: 20px;
+
+                .linknav{
+                    color: white;
+                    font-family:"Noto Sans KR";
+                    font-optical-sizing: auto;
+                    font-weight: 400;
+                    font-style: normal;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    padding: 0.5rem 1rem;
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.3);
+                        transform: scale(0.95);
+                        border-radius: 5px;
+                    }
+                }
+                .linknav.iniciarSesion{
+                    background-color: #000;
+                    color: white;
+                    border-radius: 5px;
+                    white-space: nowrap;
+
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        background-color: peru;
+                        transform: scale(0.95);
+                        border-radius: 5px;
+                        box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.3);
+                    }
+                }
+            }
+        }
+    }       
+}
+.subtitulo{
+    height: 10vh;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Noto Sans KR";
+}
+
+body, html{
+    background: rgb(205,133,63);
+    background: linear-gradient(180deg, rgba(205,133,63,1) 4%, rgba(2,0,36,1) 15%, rgba(0,0,0,1) 34%, rgba(205,133,63,1) 59%, rgba(222,184,135,1) 79%);    color: white;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    margin-top: -20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+
+    height: 50vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+.card{
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+
+    .row{
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-wrap: nowrap;
+
+        .icon{
+            background: white;
+            color: #222233;
+            border-radius: 50%;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+        }
+
+        .description{
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            height: 80px;
+            width: 520px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition-delay: .3s;
+            transition: all .3s ease;
+        }
+    }
+}
+.description p {
+    color: #ffffff;
+    padding-top: 5px;
+}
+.description h4 {
+    text-transform: uppercase;
+}
+input{
+    display: none;
+}
+input:checked + .card{
+    width: 600px;
+}
+input:checked + .card .description{
+    opacity: 1;
+    transform: translateY(0);
+}
+.card[for=c1] {
+    background-image: url('img/Cafe.jpg') ;
+}
+.card[for=c2] {
+    background-image: url('img/Torta.jpg') ;
+}
+.card[for=c3] {
+    background-image: url('img/Facturas.jpg') ;
+}
+.card[for=c4] {
+    background-image: url('img/Merienda.jpg') ;
+}
+.MenuFotos{
+    width: 100%;
+    color: white;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-rows:10vh 30rem 30rem;
+    grid-gap:2.5vh;
+    justify-items: center;
+
+    .contenedor_menu{
+        display: flex;
+        border: 0.5rem solid white;
+        border-radius: 2rem;
+        .imgamer{
+            display: flex;
+            & img{
+                width: 15vw;
+                height: 30rem;
+                border-top-left-radius: 2rem;
+                border-bottom-left-radius: 2rem;
+             }
+        }
+        .descamer{
+            width: 100%;
+            color: white;
+            font-size: 2rem;
+            font-weight: 900;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            padding-top: 5vh;
+            .menutitulo{
+                position: relative;
+                display: flex;
+                color: white;
+                flex-direction: column;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-top: 10vh;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                font-family: "Noto Sans KR";
+            }
+        }
+    }
+}
+
+.Menu{
+    height: 10vh;
+    grid-column: 1/-1;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: "Noto Sans KR";
+}
+.mascotas{
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 25vh;
+    .Gatitos{
+        height: 10vh;
+        color: white;
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        font-family: "Noto Sans KR";
+    }
+}
+.fotogatos{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    overflow: auto;
+    .gato{
+        height: 25vh;
+    }
+}
+.ubicacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+.conocernos{
+    height: 10vh;
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Noto Sans KR";
+    margin-top: -10vh;
+    .punteromapa{
+        max-height: 3vh;
+    }
+}
+
+.footer{
+    height: 7.5vh;
+    background-color:#cd853f;
+    color: white;
+    position: relative;
+    bottom: 0;
+    .navegacionfooter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 1.5rem 0;
+        .listafooter{
+            display: flex;
+            list-style: none;
+
+            .footeritem{
+                margin-right: 20px;
+                
+                .linkfooter{
+                    color: white;
+                    font-family:"Noto Sans KR";
+                    font-optical-sizing: auto;
+                    font-weight: 100;
+                    font-style: normal;
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }       
+}
+@media (max-width: 768px){
+    .header{
+        height: initial;
+
+        .navegacion{
+            flex-direction: column;
+            margin-left: 5px;
+            margin-right: 5px;
+            row-gap: 20px;
+
+            .anclaLogo{
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+            .listanav{
+                padding: initial;
+
+                .navitem{
+                    .linknav{
+                        font-weight: 400;
+                        font-size: 1rem;
+                        padding: 0.2rem;
+                        margin-right: initial;
+                    }
+                }
+            }
+        }
+    }
+    .wrapper{
+        margin-top: -30vh;
+        .container{
+            flex-direction: column;
+            .card{
+                border-radius: 5px;
+                height: 25em;
+                width: 37.5em;
+                transition: none;
+                .row{
+                    background: none;
+                    .description{
+                        text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000; 
+                        margin-left: 3.125em;
+                        justify-content: space-evenly;
+                        overflow: hidden;
+                        transform: translateX(-1.875em);
+                        transition-delay: .3s;
+                        transition: all .3s ease;
+                    }
+                    .icon{
+                        display: none;
+                    }
+                }    
+            }
+        }
+    }   
+    .subtitulo{
+        position: relative;
+        margin-bottom: 2em;
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 480px) {
+    .header{
+        height: initial;
+        .navegacion{
+            flex-direction: column;
+            margin-left: 5px;
+            margin-right: 5px;
+            row-gap: 20px;
+
+            .anclaLogo{
+                font-weight: 700;
+                font-size: 0.9rem;
+            }
+            .listanav{
+                padding: initial;
+
+                .navitem{
+                    white-space: nowrap;
+                    margin-right: 0px;
+                    .linknav{
+                        font-weight: 400;
+                        font-size: 0.6rem;
+                        padding: 0.2rem;
+                        margin-right: initial;
+                    }
+                }
+            }
+        }
+    }
+    .wrapper{
+        margin-top: -15vh;
+        .container{
+            flex-direction: column;
+            .card{
+                border-radius: 5px;
+                height: 25em;
+                width:17em;
+                transition: none;
+                .description{
+                    font-size: 0.7rem;
+                    margin-left: 3.125em;
+                    justify-content: space-evenly;
+                    overflow: hidden;
+                    transform: translateX(-1.875em);
+                    transition-delay: .3s;
+                    transition: all .3s ease;
+                }
+                .icon{
+                    display: none;
+                }
+            }
+        }
+    }
+    .subtitulo{
+
+        justify-content: left;
+        font-size: 1.2rem;
+    }
+    .body{
+        overflow-x: hidden;
+    }
+}
